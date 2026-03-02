@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Submeter Pro</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Smart Billing</h1>
+        <p>
+          Submeter Calculator <span class="bn">(সাবমিটার ক্যালকুলেটর)</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="input-grid">
+          <div class="input-group">
+            <label>Present Reading <span class="bn">(বর্তমান)</span></label>
+            <input
+              type="number"
+              id="present"
+              placeholder="0000"
+              oninput="calculate()"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="input-group">
+            <label>Previous Reading <span class="bn">(পূর্বের)</span></label>
+            <input
+              type="number"
+              id="prev"
+              placeholder="0000"
+              oninput="calculate()"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="input-group full-width">
+            <label
+              >Price Per Unit <span class="bn">(ইউনিট প্রতি দাম)</span></label
+            >
+            <input
+              type="number"
+              id="unitPrice"
+              value="10"
+              oninput="calculate()"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="input-group">
+            <label>Demand Charge <span class="bn">(ডিমান্ড)</span></label>
+            <input
+              type="number"
+              id="demand"
+              value="50"
+              oninput="calculate()"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="input-group">
+            <label>VAT % <span class="bn">(ভ্যাট শতাংশ)</span></label>
+            <input
+              type="number"
+              id="percent"
+              value="5"
+              oninput="calculate()"
+              inputmode="decimal"
+            />
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="stats">
+          <div class="stat-row">
+            <span class="label-text"
+              >Units Used <span class="bn">(ব্যবহৃত ইউনিট)</span></span
+            >
+            <span class="value-text" id="units">0</span>
+          </div>
+          <div class="stat-row">
+            <span class="label-text"
+              >Energy Cost <span class="bn">(বিদ্যুৎ খরচ)</span></span
+            >
+            <span class="value-text" id="energyCost">৳ 0.00</span>
+          </div>
+          <div class="stat-row">
+            <span class="label-text"
+              >Subtotal <span class="bn">(উপমোট)</span></span
+            >
+            <span class="value-text" id="subtotal">৳ 0.00</span>
+          </div>
+          <div class="stat-row">
+            <span class="label-text"
+              >VAT Amount <span class="bn">(ভ্যাট টাকা)</span></span
+            >
+            <span class="value-text highlight" id="vatAmount">৳ 0.00</span>
+          </div>
+        </div>
+
+        <div class="total-box">
+          <div class="total-label">
+            Payable Amount <span class="bn">(মোট প্রদেয় বিল)</span>
+          </div>
+          <div class="total-amount" id="grandTotal">৳ 0</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
